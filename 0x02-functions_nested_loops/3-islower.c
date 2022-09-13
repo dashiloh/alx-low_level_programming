@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- *  print_sign - Check
- *  An input character
+ * _islower - Check ALX
+ * @c: An input character
  * Description: function uses _putchar function to print
  * alphabet in lowercase 10 times
  * Return: 1 if is lowercase or 0 if is uppercase
