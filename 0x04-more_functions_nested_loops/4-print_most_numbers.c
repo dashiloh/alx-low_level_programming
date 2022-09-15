@@ -1,18 +1,19 @@
 #include "main.h"
-#include <ctype.h>
 /**
- * print_numbers - prints numbers 0 to 9
- *
- * Return: 0 upon sucess
+ * print_most_numbers - prints numbers 0 to 9
  */
 void print_most_numbers(void)
-{	int num;
+{
+	int i;
+
+	for (i = '0'; i <=  '9'; i++)
 	{
-		for (num = '0'; num <= '9'; num++)
+		if (i == '2' || i == '4')
 		{
-			if (num != '2' && num != '4')
-			_putchar(num);
+			continue;
 		}
+		else
+			_putchar(i);
 	}
 	_putchar('\n');
 }
