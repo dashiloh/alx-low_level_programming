@@ -1,20 +1,18 @@
-#include <stdio.h>
 #include "main.h"
-#include <string.h>
-
 /**
- * puts2 - print to stdout
- * @str: string
- * Return: o on successful
+ * puts2 - puts string
+ * @str: string to put
  */
-
 void puts2(char *str)
 {
-	int len;
+	int i = 0;
 
-	for (len = 0; str[len] != '\0'; len += 2)
+	while (str[i] != '\0')
 	{
-		_putchar(str[len]);
+		if (i % 2 == 0)
+			_putchar(str[i]);
+	i++;
 	}
+
 	_putchar('\n');
 }
