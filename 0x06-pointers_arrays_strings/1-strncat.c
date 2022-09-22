@@ -1,11 +1,12 @@
 #include "main.h"
 /**
- * _strcat - function to concatenate strings
+ * _strncat - cocatenate string
  * @dest: destination
- * @src: source
+ * @src:source
+ * @n: value
  * Return: result
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i;
 	int j;
@@ -17,7 +18,7 @@ char *_strcat(char *dest, char *src)
 	}
 
 	j = 0;
-	while (src[j] != '\0')
+	while (src[j] && j < n)
 	{
 		dest[i] = src[j];
 		i++;
