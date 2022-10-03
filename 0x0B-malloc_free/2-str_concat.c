@@ -1,23 +1,42 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * main - check the code for Holberton School students.
+ * str_concat - concatenates two strings.
+ * @s1: first string.
+ * @s2: second string.
  *
- * Return: Always 0.
+ * Return: pointer of an array of chars
  */
-int main(void)
+char *str_concat(char *s1, char *s2)
 {
-  char *s;
+	char *strout;
+	unsigned int i, j, k, limit;
 
-  s = str_concat("Betty ", "Holberton");
-  if (s == NULL)
-    {
-      printf("failed\n");
-      return (1);
-    }
-  printf("%s\n", s);
-  free(s);
-  return (0);
-}
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	for (i = 0; s1[i] != '\0'; i++)
+		;
+
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+
+	strout = malloc(sizeof(char) * (i + j + 1));
+
+	if (strout == NULL)
+	{
+		free(strout);
+		return (NULL);
+	}
+
+	for (k = 0; k < i; k++)
+		strout[k] = s1[k];
+
+	limit = j;
+	for (j = 0; j <= limit; k++, j++)
+		strout[k] = s2[j];
+
+	return (strout);
